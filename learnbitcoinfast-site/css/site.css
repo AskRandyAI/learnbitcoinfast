@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+:root {
+  --navy: #0b1a3a;
+  --navy-2: #10244d;
+  --orange: #f7931a;
+  --orange-2: #ffb347;
+  --paper: #fff7ea;
+  --muted: #c9d3ea;
+  --max: 1080px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: 'Source Sans 3', system-ui, sans-serif;
+  color: var(--orange);
+  background: var(--navy);
+  line-height: 1.65;
+}
+a { color: var(--orange-2); }
+.wrap { width: min(var(--max), calc(100% - 2rem)); margin-inline: auto; }
+.site-header {
+  position: sticky; top: 0; z-index: 20;
+  background: rgba(11, 26, 58, .94);
+  border-bottom: 1px solid rgba(247,147,26,.35);
+}
+.site-header .wrap {
+  display: flex; align-items: center; justify-content: space-between;
+  min-height: 74px; gap: 1rem;
+}
+.logo {
+  display: flex; align-items: center; gap: .7rem;
+  text-decoration: none; color: var(--orange); font-weight: 800;
+}
+.mark {
+  width: 34px; height: 34px; border-radius: 50%;
+  background: var(--orange); color: var(--navy);
+  display: grid; place-items: center; font-weight: 800;
+}
+nav { display: flex; gap: 1.15rem; flex-wrap: wrap; font-weight: 700; }
+nav a { color: var(--orange); text-decoration: none; }
+nav a:hover, nav a.active { color: #fff; }
+.btn, .btn-orange {
+  display: inline-flex; align-items: center; justify-content: center;
+  text-decoration: none; font-weight: 800;
+  padding: .9rem 1.3rem; border-radius: 999px;
+}
+.btn { background: transparent; color: var(--orange) !important; border: 2px solid var(--orange); }
+.btn-orange { background: var(--orange); color: var(--navy) !important; border: 2px solid var(--orange); }
+.hero { padding: 4.5rem 0 3rem; text-align: center; }
+.kicker {
+  letter-spacing: .18em; text-transform: uppercase; font-size: .74rem;
+  font-weight: 800; color: var(--orange-2); margin: 0 0 .7rem;
+}
+h1, h2, h3 { font-family: Fraunces, Georgia, serif; letter-spacing: -.03em; color: var(--orange); }
+h1 { font-size: clamp(2.4rem, 6vw, 4.4rem); line-height: 1.05; margin: 0 0 1rem; }
+h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); line-height: 1.15; margin: 0 0 .8rem; }
+.lede { font-size: 1.2rem; max-width: 38rem; margin: 0 auto; color: var(--muted); }
+.hero-actions { display: flex; gap: .7rem; flex-wrap: wrap; margin-top: 1.7rem; justify-content: center; }
+.grid-3, .grid-2 { display: grid; gap: 1rem; }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-2 { grid-template-columns: 1fr 1fr; }
+.card {
+  background: var(--navy-2); border: 1px solid rgba(247,147,26,.28);
+  border-radius: 18px; padding: 1.25rem 1.3rem; color: var(--orange);
+}
+.card a.block { text-decoration: none; color: inherit; display: block; height: 100%; }
+.meta { font-size: .85rem; color: var(--muted); font-weight: 600; }
+section { padding: 2.4rem 0; }
+.prose { max-width: 740px; margin-inline: auto; color: var(--orange-2); }
+.prose p, .prose li { font-size: 1.06rem; color: #f3d7a8; }
+.prose a { color: var(--orange); }
+.prose h2 { margin-top: 2rem; }
+.site-footer {
+  margin-top: 2rem; padding: 2rem 0;
+  border-top: 1px solid rgba(247,147,26,.28); color: var(--muted); font-size: .92rem;
+}
+.site-footer a { color: var(--orange); }
+.fine { font-size: .86rem; color: var(--muted); }
+
+.reader {
+  min-height: calc(100vh - 160px);
+  display: grid;
+  grid-template-columns: 72px 1fr 72px;
+  align-items: stretch;
+  gap: .5rem;
+  padding: 1.2rem 0 3rem;
+}
+.page-btn {
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2.4rem; color: var(--orange); text-decoration: none;
+  background: transparent; border: 0; cursor: pointer;
+}
+.page-btn:disabled { opacity: .25; cursor: default; }
+.book-page {
+  background: var(--paper);
+  color: #1b140c;
+  border-radius: 18px;
+  min-height: 70vh;
+  padding: 2.2rem 2rem 2.6rem;
+  box-shadow: 0 20px 50px rgba(0,0,0,.35);
+}
+.book-page h1, .book-page h2 { color: #0b1a3a; }
+.book-page p, .book-page li { color: #2a241c; }
+.book-page a { color: #c46a06; }
+.book-meta { color: #f7931a; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; font-size: .75rem; }
+@media (max-width: 800px) {
+  .grid-3, .grid-2 { grid-template-columns: 1fr; }
+  nav { font-size: .9rem; gap: .7rem; }
+  .reader { grid-template-columns: 48px 1fr 48px; }
+  .book-page { padding: 1.3rem 1rem 2rem; }
+}
